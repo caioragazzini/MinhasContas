@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication5.Models.clsProdutos>
+
+<h1>Loja Virtual Produtos</h1>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    @Html.ActionLink("Criar novo produto", "Create")
+</p>
+<p>
+    @Html.ActionLink("Criar novo produto utilizando procedures", "CreateProc")
+</p>
+
+
+<table class="table" id="tbProdutos">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdeProduto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtdeProduto)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdProduto }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdProduto }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdProduto })
+                </td>
+            </tr>
+        }
+
+
+
+
+
+
+    </tbody>
+
+</table>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebApplication5.Models.Fatura>
+
+<h1>Faturas</h1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Adicionar Conta", "Create")
+</p>
+
+
+<table class="table" id="Fatura">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FaturaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emissors.Nome)
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.DataFatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVencimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorConta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaturaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emissors.Nome)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVencimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorConta)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FaturaId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FaturaId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FaturaId })
+            </td>
+        </tr>
+        }
+
+
+
+
+
+
+    </tbody>
+
+</table>
