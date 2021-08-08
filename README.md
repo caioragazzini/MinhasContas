@@ -1,5 +1,5 @@
 
-# Projeto-LG
+# Projeto- Minhas Contas
 Sistema de gerenciamento de Fatura, gerencia os cadastros de Faturas, Emissor da Fatura e sua Categoria.
 
 ## Descrição do Projeto
